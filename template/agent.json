@@ -1,0 +1,12 @@
+{
+  "name": "agent-ready-starter",
+  "description": "TODO: one plain sentence on what this does",
+  "url": "https://github.com/HMAKT99/agent-ready-starter",
+  "skills": [
+    {
+      "id": "TODO",
+      "name": "TODO: something it can do",
+      "description": "TODO: one sentence"
+    }
+  ]
+}

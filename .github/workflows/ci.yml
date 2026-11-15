@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tests
+        # TODO: replace with your project's tests, for example `npm ci && npm test`.
+        run: |
+          if [ -f scripts/test-setup.sh ]; then bash scripts/test-setup.sh; else echo "No tests yet. Add yours in .github/workflows/ci.yml."; fi
+
+  scbee:
+    # Reads this repository's public launch-readiness and agent-ready scores and puts them, with the top fixes, in the job summary.
+    # Private repositories cannot be scored, so the step is skipped there.
+    if: ${{ !github.event.repository.private }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: HMAKT99/ScBee/action@main
+        with:
+          min_score: ""        # optional: fail the job below this readiness score, e.g. 60
+          comment: "false"     # "true" posts one pull request comment (also needs pull-requests: write and github_token)

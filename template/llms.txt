@@ -1,0 +1,8 @@
+# agent-ready-starter
+
+> TODO: one plain sentence on what this does.
+
+## Docs
+- [README](https://github.com/HMAKT99/agent-ready-starter#readme): what it is and how to install it
+- [Source](https://github.com/HMAKT99/agent-ready-starter): the code
+- [Licence](https://github.com/HMAKT99/agent-ready-starter/blob/main/LICENSE): MIT

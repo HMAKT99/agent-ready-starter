@@ -1,0 +1,9 @@
+# Agent-ready starter
+
+> A GitHub template for a new project that people and AI agents can find, install and trust from the first commit: README sections, AGENTS.md, llms.txt, an agent card, a security policy, a skill, and a readiness check on every pull request.
+
+## Docs
+- [README](https://github.com/HMAKT99/agent-ready-starter#readme): what is in it and how to use it
+- [Agent files](https://github.com/HMAKT99/agent-ready-starter/blob/main/docs/AGENT-FILES.md): examples for an MCP server.json and an OpenAPI file
+- [Starter files](https://github.com/HMAKT99/agent-ready-starter/tree/main/template): what a new project gets
+- [Licence](https://github.com/HMAKT99/agent-ready-starter/blob/main/LICENSE): MIT

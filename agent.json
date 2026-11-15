@@ -1,0 +1,12 @@
+{
+  "name": "agent-ready-starter",
+  "description": "A GitHub template for a new project that people and AI agents can find, install and trust from the first commit.",
+  "url": "https://github.com/HMAKT99/agent-ready-starter",
+  "skills": [
+    {
+      "id": "finish-setup",
+      "name": "Finish setup",
+      "description": "Walks the owner through the TODOs in a repository made from this template, then checks its readiness and agent-ready scores."
+    }
+  ]
+}
