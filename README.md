@@ -29,37 +29,42 @@ On the first push, the **Set up** workflow puts your repository's name into the 
 | `SECURITY.md` | everyone | How to report a problem privately |
 | `skills/<name>/SKILL.md` | coding agents using it | When and how to use the project, in plain steps |
 | `.claude/skills/finish-setup/` | you, through your agent | Fills in the TODOs with you, then checks the result |
-| `.github/workflows/ci.yml` | every pull request | Your tests, plus a launch-readiness and agent-ready score with the top fixes |
+| `.github/workflows/ci.yml` | every pull request | Your tests, plus one comment with the pull request's launch-readiness and agent-ready scores, the change, and the top fixes |
 
 `docs/AGENT-FILES.md` has examples for the files only some projects need: an MCP `server.json` and an OpenAPI file.
 
 ## Example
 
-After setup, every pull request in your repo gets a job summary in this shape (the numbers here are only an illustration; yours come from your repo):
+After setup, every pull request in your repo gets one comment in this shape, updated on each push (the numbers here are only an illustration; yours come from your files):
 
 ```text
-ScBee scores for github.com/you/my-project
+ScBee: launch readiness 72/100 (+6 vs main)
 
-| Score            | Result     | Band         |
-| Launch readiness | **72/100** | Nearly there |
-| Agent-ready      | **80/100** | Agent-ready  |
+| Score            | This PR | main | Change |
+| Launch readiness | 72/100  | 66   | +6     |
+| Agent-Ready      | 80/100  | 70   | +10    |
 
-Biggest wins, readiness
-- Add a screenshot or a short GIF (+4)
-- Tag a release so people can pin a version (+3)
+What this PR changed
+- Usage example (Launch readiness): +5
+- Agent instructions (Agent-Ready): +10
+
+Top 3 fixes
+1. Add a screenshot or a short GIF (+4, Launch readiness)
+2. Tag a release so people can pin a version (+3, Launch readiness)
+3. Add SECURITY.md saying how to report a problem privately (+3, Launch readiness)
 ```
 
-The scores come from [ScBee](https://scbee.vercel.app): fixed rules over public files, no AI model, a reason and a fix for every point lost. A score is about readiness, not a prediction. Private repositories cannot be scored, so in a private repo the score step is skipped and only your tests run.
+It comes from the [ScBee PR score](https://github.com/HMAKT99/scbee-action) action: [ScBee](https://scbee.vercel.app)'s fixed rules over the files in the pull request, no AI model, a reason and a fix for every point lost. A score is about readiness, not a prediction. The check runs in your workflow and sends nothing to ScBee, so private repositories work too.
 
 ## Permissions and what it never does
 
 - The **Set up** workflow needs `contents: write` once, to commit the renamed files in your own repo. It never touches other repositories and it cannot change workflow files (GitHub does not allow that token to), so it stays in place afterwards and does nothing on later pushes. Delete `.github/workflows/setup.yml` whenever you like.
-- The **CI** workflow is read-only by default. It reads your repo's public score from ScBee. Turn on its pull request comment only if you want one, by giving it `pull-requests: write`.
-- Nothing here registers your project anywhere, posts anything, or sends data about you. Listing a project on ScBee is a separate, opt-in step.
+- The **CI** workflow reads your files. Its ScBee job has `pull-requests: write`, used only to write one comment on the pull request it runs on; remove that line to keep the scores in the job summary. Pull requests from forks get the scores in the job summary, and the job never fails unless you set `fail-under`.
+- Nothing here registers your project anywhere, posts anything outside your own pull requests, or sends data about you. Listing a project on ScBee is a separate, opt-in step.
 
 ## Limits
 
-ScBee scores are cached for a few hours, so a change shows up in the score after it is pushed and the cache expires. ScBee has rate limits: 30 fresh scores an hour per address. CI reads usually hit the cache.
+The pull request score is worked out in your workflow from your files, so it is current on every push, with no cache and no rate limit. The badges at the top read the public score from ScBee, which is cached for a few hours and has rate limits (30 fresh scores an hour per address).
 
 ## Licence
 

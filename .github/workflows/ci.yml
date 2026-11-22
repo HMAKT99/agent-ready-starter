@@ -19,12 +19,15 @@ jobs:
           if [ -f scripts/test-setup.sh ]; then bash scripts/test-setup.sh; else echo "No tests yet. Add yours in .github/workflows/ci.yml."; fi
 
   scbee:
-    # Reads this repository's public launch-readiness and agent-ready scores and puts them, with the top fixes, in the job summary.
-    # Private repositories cannot be scored, so the step is skipped there.
-    if: ${{ !github.event.repository.private }}
+    # Scores this pull request's own files for launch readiness and agent-readiness, compares them with the base branch,
+    # and keeps one comment on the pull request up to date with the top fixes. On pushes the scores go to the job summary.
+    # It runs here, in your workflow, and sends nothing to ScBee, so private repositories work too.
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write   # only for that one comment; remove this line to keep the scores in the job summary
     steps:
-      - uses: HMAKT99/ScBee/action@main
+      - uses: actions/checkout@v4
+      - uses: HMAKT99/scbee-action@v1
         with:
-          min_score: ""        # optional: fail the job below this readiness score, e.g. 60
-          comment: "false"     # "true" posts one pull request comment (also needs pull-requests: write and github_token)
+          fail-under: ""       # optional: fail the check below this launch readiness score, e.g. 60
