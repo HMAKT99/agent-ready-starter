@@ -12,7 +12,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Tests
         # TODO: replace with your project's tests, for example `npm ci && npm test`.
         run: |
@@ -27,7 +27,7 @@ jobs:
       contents: read
       pull-requests: write   # only for that one comment; remove this line to keep the scores in the job summary
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: HMAKT99/scbee-action@v1
         with:
           fail-under: ""       # optional: fail the check below this launch readiness score, e.g. 60
