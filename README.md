@@ -1,6 +1,6 @@
 # Agent-ready starter
 
-[![ScBee readiness](https://scbee.vercel.app/badge/github.com/HMAKT99/agent-ready-starter.svg)](https://scbee.vercel.app/github.com/HMAKT99/agent-ready-starter) [![Agent-ready](https://scbee.vercel.app/badge/agent-ready/github.com/HMAKT99/agent-ready-starter.svg)](https://scbee.vercel.app/github.com/HMAKT99/agent-ready-starter)
+[![ScBee launch readiness score for HMAKT99/agent-ready-starter](https://scbee.vercel.app/badge/github.com/HMAKT99/agent-ready-starter.svg)](https://scbee.vercel.app/github.com/HMAKT99/agent-ready-starter) [![ScBee Agent-Ready score for HMAKT99/agent-ready-starter (can AI agents use it?)](https://scbee.vercel.app/badge/agent-ready/github.com/HMAKT99/agent-ready-starter.svg)](https://scbee.vercel.app/github.com/HMAKT99/agent-ready-starter)
 
 A GitHub template for a new project that people and AI agents can find, install and trust from the first commit: README sections that answer the first questions, `AGENTS.md`, `llms.txt`, an agent card, a security policy, a skill, and a readiness check on every pull request.
 
