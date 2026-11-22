@@ -6,4 +6,5 @@
 - [README](https://github.com/HMAKT99/agent-ready-starter#readme): what is in it and how to use it
 - [Agent files](https://github.com/HMAKT99/agent-ready-starter/blob/main/docs/AGENT-FILES.md): examples for an MCP server.json and an OpenAPI file
 - [Starter files](https://github.com/HMAKT99/agent-ready-starter/tree/main/template): what a new project gets
+- [The ScBee check](https://github.com/HMAKT99/agent-ready-starter/blob/main/template/AGENTS.md): what the readiness check on each pull request does, and that it registers nothing
 - [Licence](https://github.com/HMAKT99/agent-ready-starter/blob/main/LICENSE): MIT

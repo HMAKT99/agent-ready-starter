@@ -11,6 +11,11 @@ A GitHub template repository. Its root describes the template itself; `template/
 - Keep every TODO honest: a TODO must never contain words that would earn points from a checker before the owner has written the real answer.
 - Test the setup script locally with `bash scripts/test-setup.sh` before pushing.
 
+## The ScBee check in new projects
+- `.github/workflows/ci.yml` runs the ScBee PR score action (`HMAKT99/scbee-action@v1`) on every pull request. It scores that pull request's own files for launch readiness and agent-readiness, by fixed rules with no AI model, compares them with the base branch, and keeps one comment on the pull request up to date.
+- To see the published repository's score from a terminal: `npx scbee-cli score` in a checkout. It reads the public score of the default branch.
+- Neither registers the project anywhere or posts outside the pull request. Listing a project on ScBee is a separate step its owner chooses.
+
 ## Do not
 - Do not add code that registers a project, posts, or calls any service at setup time.
 - Do not give the setup workflow more than `contents: write`.

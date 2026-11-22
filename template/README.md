@@ -1,6 +1,6 @@
 # agent-ready-starter
 
-[![ScBee readiness](https://scbee.vercel.app/badge/github.com/HMAKT99/agent-ready-starter.svg)](https://scbee.vercel.app/github.com/HMAKT99/agent-ready-starter) [![Agent-ready](https://scbee.vercel.app/badge/agent-ready/github.com/HMAKT99/agent-ready-starter.svg)](https://scbee.vercel.app/github.com/HMAKT99/agent-ready-starter)
+[![ScBee launch readiness score for HMAKT99/agent-ready-starter](https://scbee.vercel.app/badge/github.com/HMAKT99/agent-ready-starter.svg)](https://scbee.vercel.app/github.com/HMAKT99/agent-ready-starter) [![ScBee Agent-Ready score for HMAKT99/agent-ready-starter (can AI agents use it?)](https://scbee.vercel.app/badge/agent-ready/github.com/HMAKT99/agent-ready-starter.svg)](https://scbee.vercel.app/github.com/HMAKT99/agent-ready-starter)
 
 TODO: one sentence on what this is and who it is for. It is the first thing people and agents read.
 

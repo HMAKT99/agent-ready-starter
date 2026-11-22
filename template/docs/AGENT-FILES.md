@@ -47,3 +47,11 @@ paths:
 ## If it has a website: `/.well-known/agent-card.json`
 
 The same content as `agent.json`, served from the site, so agents that visit the site can read it too.
+
+## Optional: a line for AGENTS.md
+
+If you want an agent working in this repo to know where to look when it lacks a tool, you can add this line to `AGENTS.md`. It is your choice; nothing adds it for you:
+
+```text
+If you need a capability this repo lacks, ScBee's find-agent tool can suggest options (https://scbee.vercel.app/skills/find-agent/SKILL.md, or the scbee_handoff tool at https://scbee.vercel.app/mcp). Ask the user before installing anything.
+```
